@@ -19,9 +19,13 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    # ex: 127.0.0.1/
     path('', TemplateView.as_view(
         template_name='games/main_index.html'), name='main-index'),
     # ex: 127.0.0.1/games
     path("games/", include("games.urls")),
+    # ex: 127.0.0.1/chat
+    path("chat/", include("chat.urls")),
+    # ex: 127.0.0.1/admin
     path("admin/", admin.site.urls),
 ]

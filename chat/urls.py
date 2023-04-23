@@ -3,8 +3,8 @@ from django.urls import path
 from . import views
 
 
-appname = 'games'
+appname = "chat"
 
 urlpatterns = [
-    path("", views.index, name="games-index"),
+    path("", views.index, name="chat-intex")
 ]
