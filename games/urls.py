@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 
 
-appname = 'games'
+app_name = "games"
 
 urlpatterns = [
     path("", views.index, name="games-index"),
