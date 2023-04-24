@@ -1,10 +1,21 @@
 {% extends "chat/base.html" %}
 
 {% block title%}
-    <title>Chatter Page</title>
+<title>Chat Page</title>
 {% endblock title %}
 
 {% block content %}
-    <h1>Chatter Page</h1>
-    <p>{{ message }}</p>
+<h1>Chat with me</h1>
+
+<p>{{ message_response }}</p>
+<form action="{% url 'chat:chatter' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <!-- <input type="text" name="user_message" id="1" placeholder="Enter your message" required> -->
+        <textarea name="user_message" id="1" cols="30" rows="10"></textarea>
+        <label for="1">Message</label><br>
+    </fieldset>
+    <input type="submit" value="Send Message">
+</form>
 {% endblock content %}
